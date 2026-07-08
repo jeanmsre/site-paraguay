@@ -195,7 +195,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section (Mise à jour avec Langue et Permis) -->
     <section id="faq" class="py-20 max-w-4xl mx-auto px-4 space-y-12">
         <div class="text-center space-y-4">
             <h2 class="text-3xl font-bold tracking-tight text-stone-950">Questions Fréquentes</h2>
@@ -232,6 +232,32 @@
             <!-- Question 3 -->
             <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition">
+                    <span>Comment faire si je ne parle pas espagnol ?</span>
+                    <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
+                    <p class="p-5 text-sm text-stone-600 border-t border-stone-100 leading-relaxed">
+                        Ce n'est absolument pas un problème. Dès vos premiers pas administratifs au Paraguay, notre équipe vous accompagne physiquement à chaque rendez-vous. Nous mettons à votre disposition des traducteurs officiels agréés pour les signatures officielles et la liaison avec les services de l'Immigration et d'Interpol. Vous ne serez jamais seul face à la bureaucratie locale.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition">
+                    <span>Est-il possible d'obtenir un permis de conduire paraguayen ?</span>
+                    <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
+                    <p class="p-5 text-sm text-stone-600 border-t border-stone-100 leading-relaxed">
+                        Oui, tout à fait. Une fois que vous avez obtenu votre Cédula (carte d'identité nationale), les démarches pour obtenir le permis de conduire local (licencia de conducir) auprès de la municipalité sont extrêmement simples et rapides. Nous pourrons vous guider sur les formalités requises pour effectuer cette conversion ou son obtention.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition">
                     <span>Y a-t-il un dépôt bancaire ou un capital minimum exigé par l'État ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
@@ -242,7 +268,7 @@
                 </div>
             </div>
 
-            <!-- Question 4 -->
+            <!-- Question 6 -->
             <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
                 <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition">
                     <span>Comment s'organise le paiement de l'accompagnement et de l'acompte ?</span>
@@ -289,7 +315,6 @@
                     content.style.maxHeight = '0px';
                     icon.style.transform = 'rotate(0deg)';
                 } else {
-                    // Fermer les autres questions ouvertes (optionnel)
                     document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = '0px');
                     document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
                     
