@@ -40,13 +40,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         
         <div class="relative max-w-4xl mx-auto text-center space-y-6">
-            <!-- Rond sur le site avec zoom numérique (scale) pour enlever les bandes blanches -->
-<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-amber-500 shadow-2xl overflow-hidden flex items-center justify-center">
-    
-    <!-- L'astuce est ici : on utilise w-full / h-full ET une échelle (scale) de 1.4 (zoom 40%) -->
-    <img src="avatar.jpg" alt="Rémi Paraguay" class="w-full h-full object-cover object-center scale-[1.1] transform">
-    
-</div>
+            <!-- Nouveau code optimisé : Reculé et centré -->
+        <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-amber-500 shadow-2xl bg-white flex items-center justify-center overflow-hidden">
+            <img src="avatar.jpg" alt="Rémi Paraguay" class="w-full h-full object-contain object-center">
+        </div>
             
             <span class="inline-block bg-amber-600/40 text-white border border-amber-500/40 text-xs px-4 py-1 rounded-full font-bold uppercase tracking-wider backdrop-blur-sm">Ton expatriation, loin des clichés</span>
             <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">S'installer au Paraguay.<br><span class="text-amber-400">La réalité, sans intermédiaire.</span></h1>
