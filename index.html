@@ -33,13 +33,18 @@
         </div>
     </header>
 
-      <!-- Hero Section avec fond fixe et portrait circulaire -->
-    <section class="relative text-white pt-24 pb-28 px-4 bg-center border-b-4 border-amber-700" 
-             style="background-image: url('hero-bg.jpg') !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important;">
-             
-        <div class="absolute inset-0 bg-black/50"></div>
-        
-        <div class="relative max-w-4xl mx-auto text-center space-y-6">
+     <!-- Hero Section (Le style en ligne a été supprimé) -->
+<section class="relative text-white pt-24 pb-28 px-4 border-b-4 border-amber-700 overflow-hidden bg-stone-900">
+    
+    <!-- Cette vraie image remplace le background-image et résiste à Dark Reader -->
+    <!-- object-cover et md:object-none simulent le comportement de ton fond fixe -->
+    <img src="hero-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 opacity-50">
+    
+    <!-- Voile noir de protection pour le contraste -->
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+    
+    <!-- Ton contenu (z-20 pour passer au-dessus de l'image) -->
+    <div class="relative max-w-4xl mx-auto text-center space-y-6 z-20">
        <!-- Version corrigée : Front visible, espace blanc en haut -->
         <div class="relative w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto border-4 border-amber-500 shadow-2xl flex items-center justify-center overflow-hidden">
             <!-- Remarque : J'ai remis object-contain et object-bottom -->
