@@ -12,6 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Ce bloc force l'image et bloque le mode sombre sur le background */
+        #hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+            background-color: #1c1917 !important; /* Force un fond sombre neutre au cas où */
+        }
     </style>
 </head>
 <body class="bg-[#F9F6F0] text-stone-900 antialiased relative">
@@ -33,9 +42,9 @@
         </div>
     </header>
 
-        <section class="relative text-white pt-24 pb-28 px-4 bg-center border-b-4 border-amber-700 bg-stone-900 light" 
-         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important;">
-
+       <section id="hero-section" class="relative text-white pt-24 pb-28 px-4 border-b-4 border-amber-700" 
+       style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important;">
+       
         <div class="absolute inset-0 bg-black/50"></div>
         
         <div class="relative max-w-4xl mx-auto text-center space-y-6">
