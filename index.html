@@ -16,6 +16,7 @@
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
         header, section, div, button, transition { transition: background-color 0.3s, border-color 0.3s, color 0.3s; }
 
+        /* COULEUR DES PRIX HARMONISÉE ET PROPRE (COMMUNE CLAIR/SOMBRE) */
         .prix-tag { color: #d97706 !important; transition: all 0.2s ease-in-out; }
 
         /* REGLAGES VISIBILITE MODE SOMBRE */
@@ -32,7 +33,9 @@
             color: #e7e5e4 !important;
         }
 
-        html.dark .prix-tag { color: #f59e0b !important; }
+        /* AJUSTEMENT COULEUR SOMBRE EN ALIGNEMENT CLAIR */
+        html.dark .prix-tag { color: #d97706 !important; }
+        
         html.dark .card-target, html.dark #vision .grid > div { background-color: #3e3a38 !important; border-color: #57534e !important; }
         html.dark .card-target hr { border-color: #57534e !important; }
         html.dark .card-target .bg-stone-100 { background-color: #57534e !important; color: #f5f5f4 !important; }
@@ -61,7 +64,7 @@
     <header class="sticky top-0 z-50 bg-[#F9F6F0]/90 backdrop-blur-md border-b border-orange-900/10">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="font-bold text-lg tracking-tight text-stone-900">Rémi | Paraguay 🇵🇾</div>
+                <div class="font-bold text-lg tracking-tight text-stone-900">🇵🇾 Rémi | Paraguay</div>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-semibold text-stone-600">
                 <a href="#offres" class="hover:text-amber-800 transition">Les Formules</a>
@@ -284,7 +287,7 @@
     <section id="faq" class="py-20 max-w-4xl mx-auto px-4 space-y-12">
         <div class="text-center space-y-4">
             <h2 class="text-3xl font-bold tracking-tight text-stone-950">Questions Fréquentes</h2>
-            <p class="text-stone-600">Tout ce que tu devez savoir avant de lancer ton dossier.</p>
+            <p class="text-stone-600">Tout ce que tu dois savoir avant de lancer ton dossier.</p>
         </div>
 
         <div class="space-y-4">
@@ -296,7 +299,7 @@
                 </button>
                 <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
                     <div class="p-5 text-sm text-stone-700 border-t border-stone-100 space-y-4 leading-relaxed">
-                        <p>Pour lancer valablement ton dossier, tu devez disposer d'un **passeport en cours de validité** et réunir les pièces suivantes dûment **apostillées** dans ton pays d'origine :</p>
+                        <p>Pour lancer valablement ton dossier, tu dois disposer d'un **passeport en cours de validité** et réunir les pièces suivantes dûment **apostillées** dans ton pays d'origine :</p>
                         <ul class="list-disc pl-5 space-y-1 text-stone-600">
                             <li><strong>Acte de naissance</strong> (copie intégrale apostillée).</li>
                             <li><strong>Casier judiciaire vierge</strong> (Bulletin n°3 apostillé).</li>
@@ -438,13 +441,14 @@
 
     <!-- SCRIPT DE CALCUL DYNAMIQUE DES PRIX -->
     <script>
+        // Data des grilles de prix lissées (Moins agressives sur les réductions)
         const pricingData = {
             1: { p1: [200, 1600, 1800], p2: [200, 2300, 2500], p3: [200, 1400, 1600], label: "1 personne" },
-            2: { p1: [400, 2750, 3150], p2: [400, 3900, 4300], p3: [400, 2400, 2800], label: "2 personnes" },
-            3: { p1: [600, 3360, 3960], p2: [600, 4800, 5400], p3: [600, 2900, 3500], label: "3 personnes" },
-            4: { p1: [800, 3970, 4770], p2: [800, 5700, 6500], p3: [800, 3400, 4200], label: "4 personnes" },
-            5: { p1: [1000, 4580, 5580], p2: [1000, 6600, 7600], p3: [1000, 3900, 4900], label: "5 personnes" },
-            6: { p1: [1200, 5190, 6390], p2: [1200, 7500, 8700], p3: [1200, 4400, 5600], label: "6 personnes" }
+            2: { p1: [400, 2840, 3240], p2: [400, 4100, 4500], p3: [400, 2480, 2880], label: "2 personnes" },
+            3: { p1: [600, 3990, 4590], p2: [600, 5775, 6375], p3: [600, 3480, 4080], label: "3 personnes" },
+            4: { p1: [800, 4960, 5760], p2: [800, 7200, 8000], p3: [800, 4320, 5120], label: "4 personnes" },
+            5: { p1: [1000, 5750, 6750], p2: [1000, 8375, 9375], p3: [1000, 5000, 6000], label: "5 personnes" },
+            6: { p1: [1200, 6360, 7560], p2: [1200, 9300, 10500], p3: [1200, 5520, 6720], label: "6 personnes" }
         };
 
         function updatePrices(qty) {
