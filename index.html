@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="light">
+<html lang="fr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,83 +13,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
-        header, section, div, button, transition { transition: background-color 0.3s, border-color 0.3s, color 0.3s; }
-
-        /* COULEUR DES PRIX HARMONISÉE ET PROPRE (COMMUNE CLAIR/SOMBRE) */
-        .prix-tag { color: #d97706 !important; transition: all 0.2s ease-in-out; }
-
-        /* REGLAGES VISIBILITE MODE SOMBRE */
-        html.dark body { background-color: #292524 !important; color: #f5f5f4 !important; }
-        html.dark header { background-color: rgba(41, 37, 36, 0.9) !important; border-color: rgba(255, 255, 255, 0.1) !important; }
-        html.dark header div, html.dark header nav a { color: #e7e5e4 !important; }
-        html.dark header nav a:hover { color: #fbbf24 !important; }
+        body { font-family: 'Inter', sans-serif; background-color: #0c0a09; color: #f5f5f4; }
         
-        html.dark #offres, html.dark #vision { background-color: rgba(41, 37, 36, 0.4) !important; }
-        html.dark #demarches, html.dark #faq { background-color: #1c1917 !important; }
-        html.dark h2, html.dark h3, html.dark h4 { color: #ffffff !important; }
-        
-        html.dark p, html.dark li, html.dark span:not(.bg-amber-600):not(.bg-amber-800):not(.badge-optimisation):not(.hero-titre-jaune):not(.btn-personne) {
-            color: #e7e5e4 !important;
+        .prix-tag { color: #d97706 !important; }
+
+        /* CARTES ET RECTANGLES EN FOND BLEU NUIT PERMANENT */
+        .card-target, 
+        #vision .grid > div,
+        #faq .faq-card,
+        #guide-autonomie .guide-card { 
+            background-color: rgba(15, 23, 42, 0.75) !important; 
+            border: 1px solid rgba(217, 119, 6, 0.3) !important; 
+            backdrop-filter: blur(12px);
         }
-
-        /* AJUSTEMENT COULEUR SOMBRE EN ALIGNEMENT CLAIR */
-        html.dark .prix-tag { color: #d97706 !important; }
         
-        html.dark .card-target, html.dark #vision .grid > div { background-color: #3e3a38 !important; border-color: #57534e !important; }
-        html.dark .card-target hr { border-color: #57534e !important; }
-        html.dark .card-target .bg-stone-100 { background-color: #57534e !important; color: #f5f5f4 !important; }
-        html.dark .badge-optimisation { background-color: #78350f !important; color: #fef3c7 !important; border: 1px solid #b45309 !important; }
-        html.dark .encadre-delais { background-color: rgba(28, 25, 23, 0.6) !important; border-color: rgba(217, 119, 6, 0.3) !important; }
-        html.dark .encadre-delais div { color: #fbbf24 !important; }
-        html.dark .encadre-delais strong { color: #ffffff !important; }
-        html.dark .badge-incluse { background-color: #78350f !important; border-color: #b45309 !important; color: #fef3c7 !important; }
+        .card-target hr { border-color: rgba(255, 255, 255, 0.1) !important; }
+        .card-target .bg-stone-100 { background-color: rgba(30, 41, 59, 0.8) !important; color: #f5f5f4 !important; }
+        .badge-optimisation { background-color: #78350f !important; color: #fef3c7 !important; border: 1px solid #b45309 !important; }
+        .encadre-delais { background-color: rgba(15, 23, 42, 0.9) !important; border: 1px solid rgba(217, 119, 6, 0.3) !important; }
+        .encadre-delais div { color: #fbbf24 !important; }
+        .encadre-delais strong { color: #ffffff !important; }
+        .badge-incluse { background-color: rgba(120, 53, 15, 0.4) !important; border: 1px solid #b45309 !important; color: #fef3c7 !important; }
 
-        html.dark #faq .bg-white { background-color: #3e3a38 !important; border-color: #57534e !important; }
-        html.dark #faq button { color: #ffffff !important; }
-        html.dark #faq button:hover { background-color: rgba(87, 83, 78, 0.4) !important; }
-        html.dark #faq .faq-content { background-color: rgba(28, 25, 23, 0.5) !important; }
-        html.dark #faq .faq-content p, html.dark #faq .faq-content li { color: #e7e5e4 !important; }
-        html.dark #faq .faq-content strong { color: #ffffff !important; }
-        html.dark #faq .border-t { border-color: #57534e !important; }
-        html.dark .faq-alert-box { background-color: #78350f !important; border-color: #b45309 !important; color: #fef3c7 !important; }
-        html.dark .faq-alert-box strong { color: #fbbf24 !important; }
+        #faq button { color: #ffffff !important; }
+        #faq button:hover { background-color: rgba(30, 41, 59, 0.5) !important; }
+        #faq .faq-content { background-color: rgba(15, 23, 42, 0.5) !important; }
+        #faq .faq-content p, #faq .faq-content li { color: #e7e5e4 !important; }
+        #faq .faq-content strong { color: #ffffff !important; }
+        #faq .border-t { border-color: rgba(255, 255, 255, 0.1) !important; }
+        .faq-alert-box { background-color: rgba(120, 53, 15, 0.5) !important; border: 1px solid #b45309 !important; color: #fef3c7 !important; }
+        .faq-alert-box strong { color: #fbbf24 !important; }
 
         .hero-section { filter: none !important; -webkit-filter: none !important; }
     </style>
 </head>
-<body class="bg-[#F9F6F0] text-stone-900 antialiased relative">
+<body class="bg-[#0c0a09] text-stone-100 antialiased relative">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-[#F9F6F0]/90 backdrop-blur-md border-b border-orange-900/10">
+    <header class="sticky top-0 z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="font-bold text-lg tracking-tight text-stone-900">🇵🇾 Rémi | Paraguay</div>
+                <div class="font-bold text-lg tracking-tight text-white">🇵🇾 Rémi | Paraguay</div>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-stone-600">
-                <a href="#offres" class="hover:text-amber-800 transition">Les Formules</a>
-                <a href="#demarches" class="hover:text-amber-800 transition">Le Terrain</a>
-                <a href="#vision" class="hover:text-amber-800 transition">Ma Vision</a>
-                <a href="#faq" class="hover:text-amber-800 transition">FAQ</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-stone-300">
+                <a href="#guide-autonomie" class="hover:text-amber-400 transition">Pack Autonomie</a>
+                <a href="#offres" class="hover:text-amber-400 transition">Les Formules VIP</a>
+                <a href="#demarches" class="hover:text-amber-400 transition">Le Terrain</a>
+                <a href="#vision" class="hover:text-amber-400 transition">Ma Vision</a>
+                <a href="#faq" class="hover:text-amber-400 transition">FAQ</a>
             </nav>
             
             <div class="flex items-center gap-4">
-                <button id="themeToggle" class="p-2 rounded-xl bg-stone-200/60 dark:bg-stone-700/60 text-stone-700 dark:text-amber-400 hover:scale-105 transition cursor-pointer" title="Changer de thème">
-                    <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 11H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                    <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                    </svg>
-                </button>
                 <a href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20lance%20mon%20projet%20d%27expatriation%20au%20Paraguay%20%F0%9F%87%B5%F0%9F%87%BE" target="_blank" class="bg-amber-600 text-stone-950 px-4 py-2 rounded-xl text-sm font-bold hover:bg-amber-700 transition shadow-md shadow-amber-700/20">Lancer ton projet</a>
             </div>
         </div>
     </header>
 
-    <!-- Section Hero (Correction du scroll mobile) -->
-    <section class="hero-section relative text-white pt-24 pb-28 px-4 bg-center border-b-4 border-amber-600 bg-stone-900 bg-fixed max-md:bg-scroll" 
-         style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-bg.jpg') !important; background-size: cover !important; background-repeat: no-repeat !important;">
+    <!-- Section Hero -->
+    <section class="hero-section relative text-white pt-24 pb-28 px-4 bg-center border-b-4 border-amber-600 bg-stone-900" 
+         style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-bg.jpg') !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important;">
         <div class="absolute inset-0 bg-black/30"></div>
         <div class="relative max-w-4xl mx-auto text-center space-y-6">
             <div class="relative w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto border-4 border-amber-500 shadow-2xl flex items-center justify-center overflow-hidden">
@@ -106,88 +88,137 @@
         </div>
     </section>
 
-    <!-- Section Offres Restructurée -->
-    <section id="offres" class="py-20">
+    <!-- SECTION GUIDE AUTONOMIE (47 €) -->
+    <section id="guide-autonomie" class="py-16 bg-stone-900/50 border-b border-amber-600/10">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="guide-card rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+                <div class="absolute top-4 right-4 bg-amber-600 text-stone-950 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                    Offre Évolutive V1
+                </div>
+
+                <div class="flex-1 space-y-4">
+                    <span class="text-xs font-bold bg-[#78350f] text-[#fef3c7] px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                        Tu préfères gérer toi-même ?
+                    </span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white">
+                        Le Pack Autonomie Paraguay 🇵🇾
+                    </h3>
+                    <p class="text-stone-300 text-sm md:text-base leading-relaxed">
+                        Accède au guide complet pas-à-pas pour obtenir ta **Résidence Temporaire et cédula** seul et sans intermédiaire. Évite les erreurs administratives qui font perdre des mois et rejoins notre groupe privé d'entraide.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-stone-300">
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-600 font-bold">✓</span> Guide PDF ultra-détaillé (V1)
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-600 font-bold">✓</span> Accès à vie aux futures V2 (**Résidence Permanente**, RUC, port d'armes, colis US)
+                        </div>
+                        <div class="flex items-center gap-2 col-span-1 sm:col-span-2">
+                            <span class="text-[#25D366] font-bold">⚡</span> **Canal Telegram Privé inclus** (tes questions en direct)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-72 bg-slate-900/80 p-6 rounded-2xl border border-amber-600/30 text-center space-y-4 flex-shrink-0">
+                    <div class="space-y-1">
+                        <div class="text-stone-400 text-xs line-through">Valeur future : 197 €</div>
+                        <div class="text-3xl font-bold text-amber-500">47 € <span class="text-xs text-stone-400 font-normal">accès à vie</span></div>
+                        <p class="text-[10px] text-amber-300 font-semibold bg-[#78350f]/40 px-2 py-0.5 rounded inline-block">Le prix doublera lors de la mise à jour V2</p>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <a href="https://buy.stripe.com/3cI28qcwXcko6e2fBM8k800" target="_blank" class="block w-full bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md text-center">
+                            Obtenir le Pack
+                        </a>
+                        <a href="https://t.me/remi_paraguay" target="_blank" class="block w-full text-stone-300 hover:text-white transition text-xs font-semibold">
+                            Poser une question sur telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Offres VIP -->
+    <section id="offres" class="py-20 bg-[#0c0a09]/60">
         <div class="max-w-6xl mx-auto px-4 space-y-12">
             <div class="text-center space-y-3">
-                <h2 class="text-3xl font-bold tracking-tight text-stone-900">Choisis ta formule</h2>
-                <p class="text-stone-600">Sélectionne le nombre de personnes pour adapter automatiquement les tarifs de ton accompagnement :</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Accompagnement Sur Mesure</h2>
+                <p class="text-stone-300">Sélectionne le nombre de personnes pour adapter automatiquement les tarifs de ton accompagnement VIP :</p>
                 
-                <!-- SELECTEUR DE PERSONNES DYNAMIQUE -->
-                <div class="inline-flex rounded-xl p-1.5 bg-stone-200/60 dark:bg-stone-700/80 border border-stone-300/30 mt-4 shadow-inner">
+                <div class="inline-flex rounded-xl p-1.5 bg-stone-800/80 border border-stone-700/50 mt-4 shadow-inner">
                     <button onclick="updatePrices(1)" id="btn-1" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer bg-amber-600 text-stone-950 shadow-md">1 pers.</button>
-                    <button onclick="updatePrices(2)" id="btn-2" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white">2 pers.</button>
-                    <button onclick="updatePrices(3)" id="btn-3" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white">3 pers.</button>
-                    <button onclick="updatePrices(4)" id="btn-4" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white">4 pers.</button>
-                    <button onclick="updatePrices(5)" id="btn-5" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white">5 pers.</button>
-                    <button onclick="updatePrices(6)" id="btn-6" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white">6 pers.</button>
+                    <button onclick="updatePrices(2)" id="btn-2" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">2 pers.</button>
+                    <button onclick="updatePrices(3)" id="btn-3" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">3 pers.</button>
+                    <button onclick="updatePrices(4)" id="btn-4" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">4 pers.</button>
+                    <button onclick="updatePrices(5)" id="btn-5" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">5 pers.</button>
+                    <button onclick="updatePrices(6)" id="btn-6" class="btn-personne px-4 py-2 text-sm font-bold rounded-lg transition-all cursor-pointer text-stone-300 hover:text-white">6 pers.</button>
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8 items-stretch text-stone-900">
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
                 <!-- Pack 1 : Résidence Temporaire -->
-                <div class="card-target bg-white rounded-2xl border border-stone-200 p-6 md:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                <div class="card-target rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
                     <div class="space-y-6">
                         <div>
-                            <span class="text-xs font-bold bg-stone-100 text-stone-700 px-3 py-1 rounded-full uppercase tracking-wider">Étape Initiale</span>
-                            <h3 class="text-xl font-bold text-stone-950 mt-3">Résidence Temporaire (2 ans) & Cédula</h3>
-                            <p class="text-stone-500 text-xs mt-1">Idéal pour s'installer légalement et tester le pays sans pression.</p>
+                            <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Étape Initiale</span>
+                            <h3 class="text-xl font-bold text-white mt-3">Résidence Temporaire (2 ans) & Cédula</h3>
+                            <p class="text-stone-400 text-xs mt-1">Idéal pour s'installer légalement et tester le pays sans pression.</p>
                             
-                            <!-- CONTAINER PRIX DYNAMIQUE PACK 1 -->
                             <div class="mt-4 space-y-1">
-                                <div class="prix-tag text-3xl font-bold"><span id="p1-total">1 800</span> € <span class="text-xs font-normal text-stone-500 lowercase">Total</span></div>
-                                <div class="text-xs font-medium text-stone-500">Soit : <span id="p1-acompte">200</span>€ acompte + <span id="p1-place">1 600</span>€ sur place</div>
+                                <div class="prix-tag text-3xl font-bold"><span id="p1-total">1 800</span> € <span class="text-xs font-normal text-stone-400 lowercase">Total</span></div>
+                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p1-acompte">200</span>€ acompte + <span id="p1-place">1 600</span>€ sur place</div>
                             </div>
                         </div>
-                        <hr class="border-stone-100">
-                        <ul class="space-y-3 text-sm text-stone-600">
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Validation stricte de tes documents en amont.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Traduction officielle en espagnol et légalisation incluses.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Accompagnement physique complet (Immigration, Interpol & autres).</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Dépôt sécurisé du dossier en ma présence.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Obtention finale de ta résidence.</li>
-                            <li class="flex items-start gap-2 text-amber-900 font-semibold"><span class="text-amber-600">🎁</span> Bonus : Ouverture de Compte Bancaire (Guaraní).</li>
+                        <hr>
+                        <ul class="space-y-3 text-sm text-stone-300">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Validation stricte de tes documents en amont.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Traduction officielle en espagnol et légalisation incluses.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Accompagnement physique complet (Immigration, Interpol & autres).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Dépôt sécurisé du dossier en ma présence.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Obtention finale de ta résidence.</li>
+                            <li class="flex items-start gap-2 text-amber-400 font-semibold"><span>🎁</span> Bonus : Ouverture de Compte Bancaire (Guaraní).</li>
                         </ul> 
                     </div>
 
-                    <div class="encadre-delais mt-6 p-4 rounded-xl bg-amber-50/50 border border-amber-600/20 text-center space-y-1">
-                        <div class="text-xs font-bold uppercase tracking-wider text-amber-800">Délai d’obtention :</div>
-                        <div class="text-xs text-stone-700">🪪 Résidence temporaire : <strong>3 mois</strong></div>
-                        <div class="text-xs text-stone-600 leading-tight">🪪 Cédula : <strong>45 à 60 jours</strong> après la résidence</div>
+                    <div class="encadre-delais mt-6 p-4 rounded-xl text-center space-y-1">
+                        <div class="text-xs font-bold uppercase tracking-wider text-amber-400">Délai d’obtention :</div>
+                        <div class="text-xs text-stone-300">🪪 Résidence temporaire : <strong>3 mois</strong></div>
+                        <div class="text-xs text-stone-400 leading-tight">🪪 Cédula : <strong>30 à 45 jours</strong> après la résidence</div>
                     </div>
 
                     <div class="pt-6 space-y-3">
-                        <a id="link-p1" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20souhaite%20avoir%20des%20infos%20pour%20la%20formule%20R%C3%A9sidence%20Temporaire%20pour%201%20personne%20%F0%9F%AA%AA" target="_blank" class="block w-full text-center bg-stone-900 text-white font-semibold py-3 rounded-xl hover:bg-stone-800 transition text-sm">Choisir cette formule</a>
+                        <a id="link-p1" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20souhaite%20avoir%20des%20infos%20pour%20la%20formule%20R%C3%A9sidence%20Temporaire%20pour%201%20personne%20%F0%9F%AA%AA" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-semibold py-3 rounded-xl hover:bg-amber-700 transition text-sm">Choisir cette formule</a>
                     </div>
                 </div>
 
                 <!-- Pack 2 : Certificat de Résidence Fiscale -->
-                <div class="card-target bg-white rounded-2xl border-2 border-amber-600 p-6 md:p-8 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
+                <div class="card-target rounded-2xl border-2 border-amber-500 p-6 md:p-8 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
                     <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-amber-600 text-stone-950 text-xs px-4 py-1 rounded-full font-bold uppercase tracking-wider">Le choix recommandé</div>
                     <div class="space-y-6">
                         <div>
-                            <span class="badge-optimisation text-xs font-bold bg-amber-100 text-amber-900 px-3 py-1 rounded-full uppercase tracking-wider inline-block">Optimisation complète</span>
-                            <h3 class="text-xl font-bold text-stone-950 mt-3">Résidence Fiscale</h3>
-                            <p class="text-stone-500 text-xs mt-1">Le document incontournable pour acter ton départ financier d'Europe.</p>
+                            <span class="badge-optimisation text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Optimisation complète</span>
+                            <h3 class="text-xl font-bold text-white mt-3">Résidence Fiscale</h3>
+                            <p class="text-stone-400 text-xs mt-1">Le document incontournable pour acter ton départ financier d'Europe.</p>
                             
-                            <!-- CONTAINER PRIX DYNAMIQUE PACK 2 -->
                             <div class="mt-4 space-y-1">
-                                <div class="prix-tag text-3xl font-bold"><span id="p2-total">2 500</span> € <span class="text-xs font-normal text-stone-500 lowercase">Total</span></div>
-                                <div class="text-xs font-medium text-stone-500">Soit : <span id="p2-acompte">200</span>€ acompte + <span id="p2-place">2 300</span>€ sur place</div>
+                                <div class="prix-tag text-3xl font-bold"><span id="p2-total">2 500</span> € <span class="text-xs font-normal text-stone-400 lowercase">Total</span></div>
+                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p2-acompte">200</span>€ acompte + <span id="p2-place">2 300</span>€ sur place</div>
                             </div>
                             
-                            <p class="badge-incluse text-xs text-amber-800 font-medium mt-2 bg-amber-50 px-2 py-1 rounded border border-amber-200 inline-block">✨ L'étape Temporaire est INCLUSE</p>
+                            <p class="badge-incluse text-xs font-medium mt-2 px-2 py-1 rounded inline-block">✨ L'étape Temporaire est INCLUSE</p>
                         </div>
-                        <hr class="border-stone-100">
-                        <ul class="space-y-3 text-sm text-stone-600">
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> **Prise en charge totale :** Comprend la phase temporaire initiale.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Création et enregistrement de ton RUC (numéro fiscal).</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Justification de ta présence physique selon les critères légaux.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Préparation et dépôt du dossier officiel auprès de la SET.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Obtention du certificat officiel de domiciliation fiscale.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Prise en charge des déclarations fiscales mensuelles (6 mois).</li>
-                            <li class="flex items-start gap-2 text-amber-900 font-semibold"><span class="text-amber-600">🎁</span> Bonus : Ouverture de Compte Bancaire (Guaraní).</li>
-                            <li class="flex items-start gap-2 text-amber-900 font-semibold"><span class="text-amber-600">🎁</span> Bonus : Accompagnement obtention Permis de conduire paraguayen.</li>
+                        <hr>
+                        <ul class="space-y-3 text-sm text-stone-300">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> **Prise en charge totale :** Comprend la phase temporaire initiale.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Création et enregistrement de ton RUC (numéro fiscal).</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Justification de ta présence physique selon les critères légaux.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> PréPARATION et dépôt du dossier officiel auprès de la SET.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Obtention du certificat officiel de domiciliation fiscale.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Prise en charge des déclarations fiscales mensuelles (6 mois).</li>
+                            <li class="flex items-start gap-2 text-amber-400 font-semibold"><span>🎁</span> Bonus : Ouverture de Compte Bancaire (Guaraní).</li>
+                            <li class="flex items-start gap-2 text-amber-400 font-semibold"><span>🎁</span> Bonus : Accompagnement obtention Permis de conduire paraguayen.</li>
                         </ul>
                     </div>
                     <div class="pt-6 space-y-3">
@@ -196,30 +227,29 @@
                 </div>
 
                 <!-- Pack 3 : Résidence Permanente -->
-                <div class="card-target bg-white rounded-2xl border border-stone-200 p-6 md:p-8 shadow-xl flex flex-col justify-between relative">
+                <div class="card-target rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between relative">
                     <div class="space-y-6">
                         <div>
-                            <span class="text-xs font-bold bg-stone-100 text-stone-700 px-3 py-1 rounded-full uppercase tracking-wider">Tranquillité absolue</span>
-                            <h3 class="text-xl font-bold text-stone-950 mt-3">Résidence Permanente</h3>
-                            <p class="text-stone-500 text-xs mt-1">Le pack pour obtenir ton statut définitif et t'installer à long terme.</p>
+                            <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Tranquillité absolue</span>
+                            <h3 class="text-xl font-bold text-white mt-3">Résidence Permanente</h3>
+                            <p class="text-stone-400 text-xs mt-1">Le pack pour obtenir ton statut définitif et t'installer à long terme.</p>
                             
-                            <!-- CONTAINER PRIX DYNAMIQUE PACK 3 -->
                             <div class="mt-4 space-y-1">
-                                <div class="prix-tag text-3xl font-bold"><span id="p3-total">1 600</span> € <span class="text-xs font-normal text-stone-500 lowercase">Total</span></div>
-                                <div class="text-xs font-medium text-stone-500">Soit : <span id="p3-acompte">200</span>€ acompte + <span id="p3-place">1 400</span>€ sur place</div>
+                                <div class="prix-tag text-3xl font-bold"><span id="p3-total">1 600</span> € <span class="text-xs font-normal text-stone-400 lowercase">Total</span></div>
+                                <div class="text-xs font-medium text-stone-400">Soit : <span id="p3-acompte">200</span>€ acompte + <span id="p3-place">1 400</span>€ sur place</div>
                             </div>
                         </div>
-                        <hr class="border-stone-100">
-                        <ul class="space-y-3 text-sm text-stone-600">
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Transition complète vers le statut permanent définitif.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Analyse et préparation de ton dossier de changement de statut.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Gestion complète des démarches et suivi auprès de la Migración.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Tous les frais administratifs et taxes locales inclus.</li>
-                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">✓</span> Obtention finale sécurisée de ta Cédula Permanente.</li>
+                        <hr>
+                        <ul class="space-y-3 text-sm text-stone-300">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Transition complète vers le statut permanent définitif.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Analyse et préparation de ton dossier de changement de statut.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Gestion complète des démarches et suivi auprès de la Migración.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Tous les frais administratifs et taxes locales inclus.</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">✓</span> Obtention finale sécurisée de ta Cédula Permanente.</li>
                         </ul>
                     </div>
                     <div class="pt-6 space-y-3">
-                        <a id="link-p3" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formule%20R%C3%A9sidence%20Permanente%20pour%201%20personne%20%F0%9F%94%92" target="_blank" class="block w-full text-center bg-stone-900 text-white font-semibold py-3 rounded-xl hover:bg-stone-800 transition text-sm">Choisir cette formule</a>
+                        <a id="link-p3" href="https://wa.me/595962374687?text=Bonjour%20R%C3%A9mi%2C%20je%20veux%20en%20savoir%20plus%20sur%20la%20formule%20R%C3%A9sidence%20Permanente%20pour%201%20personne%20%F0%9F%94%92" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-semibold py-3 rounded-xl hover:bg-amber-700 transition text-sm">Choisir cette formule</a>
                     </div>
                 </div>
             </div>
@@ -256,56 +286,56 @@
     <!-- La Vision Section -->
     <section id="vision" class="py-20 max-w-5xl mx-auto px-4 space-y-12">
         <div class="text-center space-y-3">
-            <h2 class="text-3xl font-bold tracking-tight text-stone-900">Pourquoi j'ai choisi le Paraguay (et pourquoi tu devrais y penser)</h2>
-            <p class="text-stone-600">Une terre construite sur des valeurs de liberté réelle, de souveraineté et de pragmatisme.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Pourquoi j'ai choisi le Paraguay (et pourquoi tu devrais y penser)</h2>
+            <p class="text-stone-300">Une terre construite sur des valeurs de liberté réelle, de souveraineté et de pragmatisme.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-xl border border-stone-200 space-y-2 shadow-sm">
-                <div class="text-xs font-bold uppercase text-amber-700">0% d'impôt mondial</div>
-                <h3 class="text-lg font-bold text-stone-900">Taxation Territoriale</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">Le Paraguay applique une règle fiscale stricte : tes revenus générés en dehors des frontières ne subissent aucune imposition (0%). C'est le paradis des entrepreneurs web et freelances.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">0% d'impôt mondial</div>
+                <h3 class="text-lg font-bold text-white">Taxation Territoriale</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Le Paraguay applique une règle fiscale stricte : tes revenus générés en dehors des frontières ne subissent aucune imposition (0%). C'est le paradis des entrepreneurs web et freelances.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-stone-200 space-y-2 shadow-sm">
-                <div class="text-xs font-bold uppercase text-amber-700">Réciprocité totale</div>
-                <h3 class="text-lg font-bold text-stone-900">Une Nation Profondément Libérale</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">Le pays offre aux résidents étrangers une égalité parfaite avec les locaux en matière de droits civils et de protection de ta pleine propriété.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Réciprocité totale</div>
+                <h3 class="text-lg font-bold text-white">Une Nation Profondément Libérale</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Le pays offre aux résidents étrangers une égalité parfaite avec les locaux en matière de droits civils et de protection de ta pleine propriété.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-stone-200 space-y-2 shadow-sm">
-                <div class="text-xs font-bold uppercase text-amber-700">Indépendance absolue</div>
-                <h3 class="text-lg font-bold text-stone-900">Propriété Foncière & d'Entreprise à 100 %</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">Pas besoin de prête-nom ou d'associé local obligatoire. Tu possèdes à 100 % tes terrains, tes maisons et les parts de tes sociétés.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Indépendance absolue</div>
+                <h3 class="text-lg font-bold text-white">Propriété Foncière & d'Entreprise à 100 %</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Pas besoin de prête-nom ou d'associé local obligatoire. Tu possèdes à 100 % tes terrains, tes maisons et les parts de tes sociétés.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-stone-200 space-y-2 shadow-sm">
-                <div class="text-xs font-bold uppercase text-amber-700">Mobilité libre</div>
-                <h3 class="text-lg font-bold text-stone-900">Liberté Géographique</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">Le système ne t'enchaîne pas ici. Il n'est pas impératif de vivre à l'année sur le territoire pour maintenir tes avantages. Tu vis et travaille d'où tu veux.</p>
+            <div class="p-6 rounded-xl space-y-2 shadow-sm border border-amber-600/30 bg-slate-900/75">
+                <div class="text-xs font-bold uppercase text-amber-400">Mobilité libre</div>
+                <h3 class="text-lg font-bold text-white">Liberté Géographique</h3>
+                <p class="text-sm text-stone-300 leading-relaxed">Le système ne t'enchaîne pas ici. Il n'est pas impératif de vivre à l'année sur le territoire pour maintenir tes avantages. Tu vis et travaille d'où tu veux.</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section Complète Réintégrée -->
+    <!-- FAQ Section -->
     <section id="faq" class="py-20 max-w-4xl mx-auto px-4 space-y-12">
         <div class="text-center space-y-4">
-            <h2 class="text-3xl font-bold tracking-tight text-stone-950">Questions Fréquentes</h2>
-            <p class="text-stone-600">Tout ce que tu dois savoir avant de lancer ton dossier.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Questions Fréquentes</h2>
+            <p class="text-stone-300">Tout ce que tu dois savoir avant de lancer ton dossier.</p>
         </div>
 
         <div class="space-y-4">
             <!-- Question 1 -->
-            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
-                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition cursor-pointer">
+            <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
                     <span>Quels sont les documents obligatoires à fournir et à faire apostiller ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
-                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
-                    <div class="p-5 text-sm text-stone-700 border-t border-stone-100 space-y-4 leading-relaxed">
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-5 text-sm text-stone-300 border-t border-stone-800 space-y-4 leading-relaxed">
                         <p>Pour lancer valablement ton dossier, tu dois disposer d'un **passeport en cours de validité** et réunir les pièces suivantes dûment **apostillées** dans ton pays d'origine :</p>
-                        <ul class="list-disc pl-5 space-y-1 text-stone-600">
+                        <ul class="list-disc pl-5 space-y-1 text-stone-300">
                             <li><strong>Acte de naissance</strong> (copie intégrale apostillée).</li>
                             <li><strong>Casier judiciaire vierge</strong> (Bulletin n°3 apostillé).</li>
                             <li><strong>Acte de mariage</strong> (apostillé, si tu es marié).</li>
                         </ul>
-                        <div class="faq-alert-box bg-amber-50 text-amber-900 border border-amber-200 p-3 rounded-lg text-xs font-medium transition">
+                        <div class="faq-alert-box p-3 rounded-lg text-xs font-medium transition">
                             ⚠️ <strong>Règle importante :</strong> Si tu as résidé de manière continue pendant plus d’un an dans un autre pays au cours des 3 dernières années, tu dois obligatoirement fournir également le(s) casier(s) judiciaire(s) de ce pays, eux aussi apostillés.
                         </div>
                     </div>
@@ -313,65 +343,65 @@
             </div>
 
             <!-- Question 2 -->
-            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
-                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition cursor-pointer">
+            <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
                     <span>Combien de temps dois-je rester sur place pour les démarches ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
-                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
-                    <p class="p-5 text-sm text-stone-700 border-t border-stone-100 leading-relaxed">
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
                         Ta présence physique à Asunción est obligatoire pendant seulement 3 à 4 jours ouvrés. C’est le temps nécessaire pour passer les contrôles notariés, le passage au bureau d'Interpol et le dépôt officiel de ta signature. Une fois ces formalités accomplies, tu es libre de quitter le territoire.
                     </p>
                 </div>
             </div>
 
             <!-- Question 3 -->
-            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
-                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition cursor-pointer">
+            <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
                     <span>Comment faire si je ne parle pas espagnol ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
-                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
-                    <p class="p-5 text-sm text-stone-700 border-t border-stone-100 leading-relaxed">
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
                         Ce n'est absolument pas un problème. Dès tes premiers pas administratifs au Paraguay, je t'accompagne personnellement à chaque rendez-vous. Nous mettons à ta disposition des traducteurs officiels agréés pour les signatures officielles. Tu ne seras jamais seul face à la bureaucratie locale.
                     </p>
                 </div>
             </div>
 
             <!-- Question 4 -->
-            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
-                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition cursor-pointer">
+            <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
                     <span>Est-il possible d'obtenir un permis de conduire paraguayen ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
-                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
-                    <p class="p-5 text-sm text-stone-700 border-t border-stone-100 leading-relaxed">
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
                         Oui, tout à fait. Une fois que tu as obtenu ta Cédula (carte d'identité nationale), les démarches pour obtenir le permis de conduire local auprès de la municipalité sont extrêmement simples. Je peux te guider sur les formalités requises.
                     </p>
                 </div>
             </div>
 
             <!-- Question 5 -->
-            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
-                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition cursor-pointer">
+            <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
                     <span>Y a-t-il un dépôt bancaire ou un capital minimum exigé par l'État ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
-                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
-                    <p class="p-5 text-sm text-stone-700 border-t border-stone-100 leading-relaxed">
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
                         Avec la législation actuelle sur la résidence temporaire (loi 6984), il n'y a plus d'exigence de dépôt de capital bloqué à la banque centrale comme c'était le cas auparavant. Le processus d'accès a été grandement simplifié au niveau financier.
                     </p>
                 </div>
             </div>
 
             <!-- Question 6 -->
-            <div class="border border-stone-200 rounded-xl bg-white overflow-hidden">
-                <button class="faq-btn w-full text-left p-5 font-semibold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition cursor-pointer">
+            <div class="faq-card border border-stone-800 rounded-xl overflow-hidden shadow-sm">
+                <button class="faq-btn w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:bg-stone-800/50 transition cursor-pointer">
                     <span>Comment s'organise le paiement de l'accompagnement et de l'acompte ?</span>
                     <span class="faq-icon text-xl text-stone-400 transition-transform font-light">+</span>
                 </button>
-                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50">
-                    <p class="p-5 text-sm text-stone-700 border-t border-stone-100 leading-relaxed">
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="p-5 text-sm text-stone-300 border-t border-stone-800 leading-relaxed">
                         Un acompte de 200 € par personne est demandé à la commande pour lancer l'étude de faisabilité de ton dossier, initier les démarches administratives et réserver tes créneaux. Le solde restant est payable une fois arrivé au Paraguay au moment du lancement officiel des rendez-vous physiques.
                     </p>
                 </div>
@@ -384,7 +414,7 @@
         <div class="max-w-3xl mx-auto space-y-8">
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight">On valide ton éligibilité ?</h2>
             <p class="text-stone-300 font-light text-lg">Chaque profil est particulier (indépendant, retraité, digital nomad, entrepreneurs). Ne prends aucun risque inutile. Planifions un premier appel pour valider la faisabilité de ton dossier.</p>
-            <div class="inline-block bg-stone-800 p-6 rounded-2xl border border-stone-700/60 max-w-md mx-auto w-full space-y-4 shadow-xl">
+            <div class="inline-block bg-slate-900/90 p-6 rounded-2xl border border-amber-600/30 max-w-md mx-auto w-full space-y-4 shadow-xl">
                 <p class="text-sm font-semibold text-amber-400">📅 Réserve ton créneau de 15 minutes dès maintenant :</p>
                 <a href="https://calendly.com/vivreauparaguay-proton/15min/" target="_blank" class="block w-full bg-amber-600 text-stone-950 py-3 rounded-xl font-bold hover:bg-amber-700 transition text-center shadow-md">Accéder à mon calendrier privé</a>
             </div>
@@ -394,7 +424,7 @@
     <!-- Footer -->
     <footer class="bg-stone-950 text-stone-500 py-12 text-center text-xs border-t border-stone-900">
         <div class="max-w-6xl mx-auto px-4">
-            <p>&copy; 2026 Rémi. Tous droits réservés. Accompagnement privé en coordination directe avec nos correspondants juridiques et avocats partenaires officiels au Paraguay.</p>
+            <p>&copy; 2026 Rémi. Tous droit réservés. Accompagnement privé en coordination directe avec nos correspondants juridiques et avocats partenaires officiels au Paraguay.</p>
         </div>
     </footer>
 
@@ -409,7 +439,7 @@
                     icon.style.transform = 'rotate(0deg)';
                 } else {
                     document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = '0px');
-                    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+                    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)';
                     content.style.maxHeight = content.scrollHeight + 'px';
                     icon.style.transform = 'rotate(45deg)';
                 }
@@ -417,31 +447,8 @@
         });
     </script>
 
-    <!-- Script Toggle Thème -->
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        const sunIcon = document.getElementById('sunIcon');
-        const moonIcon = document.getElementById('moonIcon');
-
-        themeToggle.addEventListener('click', () => {
-            if (html.classList.contains('light')) {
-                html.classList.remove('light');
-                html.classList.add('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                html.classList.remove('dark');
-                html.classList.add('light');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }
-        });
-    </script>
-
     <!-- SCRIPT DE CALCUL DYNAMIQUE DES PRIX -->
     <script>
-        // Data des grilles de prix lissées (Moins agressives sur les réductions)
         const pricingData = {
             1: { p1: [200, 1600, 1800], p2: [200, 2300, 2500], p3: [200, 1400, 1600], label: "1 personne" },
             2: { p1: [400, 2840, 3240], p2: [400, 4100, 4500], p3: [400, 2480, 2880], label: "2 personnes" },
@@ -472,10 +479,10 @@
 
             document.querySelectorAll('.btn-personne').forEach(btn => {
                 btn.classList.remove('bg-amber-600', 'text-stone-950', 'shadow-md');
-                btn.classList.add('text-stone-600', 'dark:text-stone-300', 'hover:text-stone-950', 'dark:hover:text-white');
+                btn.classList.add('text-stone-300', 'hover:text-white');
             });
             const activeBtn = document.getElementById(`btn-${qty}`);
-            activeBtn.classList.remove('text-stone-600', 'dark:text-stone-300', 'hover:text-stone-950', 'dark:hover:text-white');
+            activeBtn.classList.remove('text-stone-300', 'hover:text-white');
             activeBtn.classList.add('bg-amber-600', 'text-stone-950', 'shadow-md');
         }
     </script>
