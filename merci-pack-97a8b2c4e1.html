@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merci pour ton achat ! 🇵🇾</title>
+    <title>Ton Pack est prêt ! 🇵🇾 | Rémi Paraguay</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google Fonts -->
@@ -14,48 +14,79 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-stone-900 text-stone-100 min-h-screen flex items-center justify-center p-4">
+<body class="bg-stone-950 text-stone-100 min-h-screen flex items-center justify-center p-6 relative">
 
-    <div class="max-w-md w-full bg-stone-800 rounded-3xl p-8 border border-amber-600/20 text-center space-y-6 shadow-2xl relative overflow-hidden">
+    <!-- Effet de halo bleu en fond (le fond bleu que vous aimez) -->
+    <div class="absolute inset-0 bg-blue-900/10 blur-[150px] -z-10"></div>
+
+    <div class="max-w-2xl w-full bg-stone-900/60 rounded-3xl p-10 border border-amber-600/10 text-center space-y-8 shadow-[0_25px_100px_-15px_rgba(30,58,138,0.3)] relative overflow-hidden backdrop-blur-xl">
         
-        <div class="text-4xl">🎉</div>
-        <h1 class="text-2xl font-bold text-white">Félicitations !</h1>
-        <p class="text-stone-300 text-sm leading-relaxed">
-            Ton paiement a bien été validé. Tu as désormais un accès à vie au **Pack Autonomie** et à toutes ses futures évolutions.
-        </p>
-
-        <hr class="border-stone-700">
-
-        <!-- ÉTAPE 1 : TÉLÉCHARGER LE GUIDE -->
-        <div class="space-y-3 text-left">
-            <h2 class="text-xs font-bold text-amber-500 uppercase tracking-wider text-center">Étape 1 : Récupère ton guide</h2>
-            <!-- Dépose ton PDF sur ton Google Drive (en accès "Tous les utilisateurs disposant du lien") et colle le lien ci-dessous -->
-            <a href="https://drive.proton.me/urls/5NHFAYGVHC#grewi2g21rnA" target="_blank" class="block w-full bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm text-center shadow-md">
-                📥 Télécharger le Guide PDF (V1)
-            </a>
+        <!-- Haut de page - Rassurer l'acheteur -->
+        <div class="space-y-3">
+            <div class="text-3xl text-amber-500">🇵🇾 ✨</div>
+            <h1 class="text-3xl font-bold text-white tracking-tight leading-tight">Merci, Ton Pack Autonomie est prêt !</h1>
+            <p class="text-stone-300 text-sm max-w-lg mx-auto leading-relaxed">
+                Ton paiement a bien été validé. Ton accès complet au guide t'a été immédiatement envoyé par e-mail.
+            </p>
+            <p class="text-xs text-amber-500/80 bg-amber-950/20 px-3 py-1.5 rounded-full inline-block font-semibold">
+                📩 <span class="text-stone-200">Vérifie ta boîte de réception (et tes spams si besoin).</span>
+            </p>
         </div>
 
-        <!-- ÉTAPE 2 : REJOINDRE LE TELEGRAM + AVERTISSEMENT -->
-        <div class="space-y-3 pt-2 text-left">
-            <h2 class="text-xs font-bold text-[#25D366] uppercase tracking-wider text-center">Étape 2 : Rejoins le groupe d'entraide</h2>
+        <!-- ÉTAPE 2 : L'UPSELL PREMIUM (LE PETIT CARRÉ BLEU DORÉ) -->
+        <div class="space-y-6 pt-2">
             
-            <!-- Encadré Anti-Fraude -->
-            <div class="bg-amber-600/10 border border-amber-600/20 rounded-xl p-3 text-xs text-amber-400 space-y-1">
-                <p class="font-semibold flex items-center gap-1">⚠️ Validation manuelle obligatoire :</p>
-                <p class="text-stone-300 leading-tight">Pour éviter le partage illégal des accès, chaque demande d'entrée sur Telegram est vérifiée avec ton nom et ton reçu de paiement Stripe avant acceptation.</p>
+            <h2 class="text-sm font-bold text-amber-500 uppercase tracking-widest text-center">Étape 2 : Passe à la vitesse supérieure (Optionnel)</h2>
+            
+            <!-- Encadré 'Blue Box' avec bordure dorée -->
+            <div class="bg-blue-950/40 border-2 border-amber-600/30 rounded-2xl p-8 space-y-6 text-left shadow-[0_8px_30px_rgba(30,58,138,0.3)] backdrop-blur-md">
+                
+                <div class="flex items-start gap-4">
+                    <div class="text-3xl text-amber-400 mt-1">💡</div>
+                    <div class="space-y-2">
+                        <p class="text-xl font-semibold text-white leading-tight">Le Guide c'est bien. Mon Accompagnement, c'est ta voie Royale.</p>
+                        <p class="text-sm text-stone-300 leading-relaxed">
+                            Le guide te donne les étapes. <span class="text-amber-300 font-medium">L'accompagnement VIP</span> te donne l'accélérateur. J'ai accompagné des dizaines de personnes à valider leur dossier. On le fait ensemble ?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-stone-800 rounded-xl p-4 text-xs text-stone-300 space-y-2">
+                    <p class="font-semibold text-white flex items-center gap-1.5"><span class="text-amber-400">💎</span> Ce que ça change pour toi :</p>
+                    <ul class="list-disc list-inside space-y-1 ml-1 text-stone-300">
+                        <li>Validation dossier en 3-6 mois (vs 12+ sans aide).</li>
+                        <li>Audit complet de tes documents et stratégie d'expatriation et investissement.</li>
+                        <li>Priorité absolue sur mes contacts et ma logistique.</li>
+                    </ul>
+                </div>
+
+                <!-- BOUTON CALENDLY -->
+                <div class="pt-2">
+                    <!-- Remplacez TON_LIEN_CALENDLY par le lien de votre événement Calendly (ex: Appel découverte 30min) -->
+                    <a href="https://calendly.com/vivreauparaguay-proton/15min" target="_blank" class="block w-full bg-amber-600 text-stone-950 font-bold py-4 rounded-xl hover:bg-amber-700 transition text-base text-center shadow-[0_8px_20px_rgba(217,119,6,0.3)]">
+                        👉 Discutons de ton projet en privé (Appel gratuit 15min)
+                    </a>
+                    <p class="text-center text-[11px] text-stone-500 pt-3">Réservé uniquement si tu es prêt à venir au Paraguay.</p>
+                </div>
             </div>
 
-            <!-- Crée un lien d'invitation avec "Approbation Requise" dans ton Telegram privé et colle-le ci-dessous -->
-            <a href="TON_LIEN_D_INVITATION_TELEGRAM" target="_blank" class="block w-full bg-[#25D366] text-white font-bold py-3 rounded-xl hover:bg-[#20ba5a] transition text-sm text-center shadow-md">
-                💬 Demander l'accès au Telegram Privé
-            </a>
         </div>
 
-        <hr class="border-stone-700">
+        <hr class="border-stone-800">
 
-        <p class="text-[11px] text-stone-400 leading-tight">
-            Besoin d'aide ou un problème avec tes liens ? Envoie-moi un message sur WhatsApp. À tout de suite sur le terrain !
-        </p>
+        <!-- Bas de page -->
+        <div class="space-y-4">
+            <p class="text-stone-300 text-sm leading-relaxed max-w-sm mx-auto">
+                Tu as des questions spécifiques sur le Pack ou tes futurs documents ?
+            </p>
+            <div class="bg-stone-800 border border-stone-700/50 rounded-xl p-3 text-xs text-stone-400 space-y-2 max-w-xs mx-auto">
+                <p class="font-semibold text-stone-200">⚠️ <span class="text-amber-500">Demande d'accès Telegram privé:</span></p>
+                <p class="leading-tight">Ton lien d'accès au groupe Telegram Privé est inclus dans l'e-mail de confirmation. Pense à vérifier tes spams.</p>
+            </div>
+            <p class="text-[11px] text-stone-500 leading-tight">
+                Pour toute urgence technique, envoie-moi un message sur telegram. À tout de suite sur le terrain !
+            </p>
+        </div>
     </div>
 
 </body>
