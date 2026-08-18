@@ -21,7 +21,8 @@
         .card-target, 
         #vision .grid > div,
         #faq .faq-card,
-        #guide-autonomie .guide-card { 
+        #guide-autonomie .guide-card,
+        .card-pack-option { 
             background-color: rgba(15, 23, 42, 0.75) !important; 
             border: 1px solid rgba(217, 119, 6, 0.3) !important; 
             backdrop-filter: blur(12px);
@@ -56,7 +57,7 @@
                 <div class="font-bold text-lg tracking-tight text-white">🇵🇾 Rémi | Paraguay</div>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-semibold text-stone-300">
-                <a href="#guide-autonomie" class="hover:text-amber-400 transition">Pack Autonomie</a>
+                <a href="#guide-autonomie" class="hover:text-amber-400 transition">Packs Autonomie</a>
                 <a href="#offres" class="hover:text-amber-400 transition">Les Formules VIP</a>
                 <a href="#demarches" class="hover:text-amber-400 transition">Le Terrain</a>
                 <a href="#vision" class="hover:text-amber-400 transition">Ma Vision</a>
@@ -88,54 +89,105 @@
         </div>
     </section>
 
-    <!-- SECTION GUIDE AUTONOMIE (47 €) -->
+    <!-- SECTION GUIDES AUTONOMIE (NOUVELLE STRUCTURE : 3 OPTIONS) -->
     <section id="guide-autonomie" class="py-16 bg-stone-900/50 border-b border-amber-600/10">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="guide-card rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
-                <div class="absolute top-4 right-4 bg-amber-600 text-stone-950 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                    Offre Évolutive V1
-                </div>
+        <div class="max-w-6xl mx-auto px-4 space-y-10">
+            <div class="text-center space-y-3">
+                <span class="text-xs font-bold bg-[#78350f] text-[#fef3c7] px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                    Tu préfères gérer toi-même tes démarches ?
+                </span>
+                <h2 class="text-2xl md:text-4xl font-bold text-white">
+                    Packs Autonomie Paraguay 🇵🇾
+                </h2>
+                <p class="text-stone-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    Des méthodes pas-à-pas claires et concrètes pour réussir ton expatriation seul et sans intermédiaire. Évite les erreurs administratives qui font perdre des mois.
+                </p>
+            </div>
 
-                <div class="flex-1 space-y-4">
-                    <span class="text-xs font-bold bg-[#78350f] text-[#fef3c7] px-3 py-1 rounded-full uppercase tracking-wider inline-block">
-                        Tu préfères gérer toi-même ?
-                    </span>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white">
-                        Le Pack Autonomie Paraguay 🇵🇾
-                    </h3>
-                    <p class="text-stone-300 text-sm md:text-base leading-relaxed">
-                        Accède au guide complet pas-à-pas pour obtenir ta **Résidence Temporaire et cédula** seul et sans intermédiaire. Évite les erreurs administratives qui font perdre des mois et rejoins notre groupe privé d'entraide.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-stone-300">
-                        <div class="flex items-center gap-2">
-                            <span class="text-amber-600 font-bold">✓</span> Guide PDF ultra-détaillé (V1)
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-amber-600 font-bold">✓</span> Accès à vie aux futures V2 (**Résidence Permanente**, RUC, port d'armes, colis US)
-                        </div>
-                        <div class="flex items-center gap-2 col-span-1 sm:col-span-2">
-                            <span class="text-[#25D366] font-bold">⚡</span> **Canal Telegram Privé inclus** (tes questions en direct)
-                        </div>
+            <!-- Grille des 3 Options d'achat -->
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Option A : Résidence Temporaire -->
+                <div class="card-pack-option rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Option A</span>
+                        <h3 class="text-xl font-bold text-white">Guide Résidence Temporaire & Cédula</h3>
+                        <p class="text-stone-300 text-xs leading-relaxed">
+                            Tout le protocole exact pour faire ton entrée, préparer tes documents apostillés et obtenir ta résidence de 2 ans.
+                        </p>
+                        <div class="text-3xl font-bold text-amber-500 pt-2">47 € <span class="text-xs text-stone-400 font-normal">accès à vie</span></div>
+                        <hr class="border-white/10">
+                        <ul class="space-y-2 text-xs text-stone-300">
+    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Méthode complète résidence temporaire (V1)</li>
+    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Liste exacte des documents à fournir </li>
+    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Lien google maps & adresses exactes des lieux à Asunción</li>
+    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Contacts traducteurs & notaires vérifiés</li>
+    <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Procédure de dépôt auprès de Migraciones</li>
+    <li class="flex items-center gap-2 text-amber-400 font-semibold"><span class="text-[#25D366] font-bold">⚡</span> Accès au groupe Telegram Privé</li>
+</ul>
                     </div>
-                </div>
-
-                <div class="w-full md:w-72 bg-slate-900/80 p-6 rounded-2xl border border-amber-600/30 text-center space-y-4 flex-shrink-0">
-                    <div class="space-y-1">
-                        <div class="text-stone-400 text-xs line-through">Valeur future : 197 €</div>
-                        <div class="text-3xl font-bold text-amber-500">47 € <span class="text-xs text-stone-400 font-normal">accès à vie</span></div>
-                        <p class="text-[10px] text-amber-300 font-semibold bg-[#78350f]/40 px-2 py-0.5 rounded inline-block">Le prix doublera lors de la mise à jour V2</p>
-                    </div>
-                    
-                    <div class="space-y-2">
-                        <a href="https://buy.stripe.com/6oU14m8gH3NSbym89k8k801" target="_blank" class="block w-full bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md text-center">
-                            Obtenir le Pack
-                        </a>
-                        <a href="https://t.me/remi_paraguay" target="_blank" class="block w-full text-stone-300 hover:text-white transition text-xs font-semibold">
-                            Poser une question sur telegram
+                    <div class="pt-4">
+                        <a href="https://buy.stripe.com/6oU14m8gH3NSbym89k8k801" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">
+                            Obtenir ce Guide (47 €)
                         </a>
                     </div>
                 </div>
+
+                <!-- Option B : Résidence Permanente -->
+                <div class="card-pack-option rounded-2xl p-6 md:p-8 shadow-xl flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold bg-stone-800 text-stone-300 px-3 py-1 rounded-full uppercase tracking-wider">Option B</span>
+                        <h3 class="text-xl font-bold text-white">Guide Résidence Permanente</h3>
+                        <p class="text-stone-300 text-xs leading-relaxed">
+                            Pour ceux qui touchent à la fin de leurs 2 ans de résidence temporaire et veulent convertir leur statut vers le permanent.
+                        </p>
+                        <div class="text-3xl font-bold text-amber-500 pt-2">47 € <span class="text-xs text-stone-400 font-normal">accès à vie</span></div>
+                        <hr class="border-white/10">
+                        <ul class="space-y-2 text-xs text-stone-300">
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Guide de transition Temporaire 👉 Permanente</li>
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Liste exacte des documents à fournir</li>
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Lien google maps & adresses exactes des lieux à Asunción</li>
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Procédure de renouvellement auprès de Migraciónes</li>
+                            <li class="flex items-center gap-2 text-amber-400 font-semibold"><span class="text-[#25D366] font-bold">⚡</span> Accès au groupe Telegram Privé</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4">
+                        <a href="https://buy.stripe.com/fZu7sK40r1FKaui2P08k802" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">
+                            Obtenir ce Guide (47 €)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Option C : Pack Intégral (Offre Recommandée) -->
+                <div class="card-pack-option rounded-2xl border-2 border-amber-500 p-6 md:p-8 shadow-2xl flex flex-col justify-between space-y-6 relative transform lg:-translate-y-2">
+                    <div class="absolute top-0 right-6 transform -translate-y-1/2 bg-amber-600 text-stone-950 text-[10px] md:text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                        Économise 17 €
+                    </div>
+                    <div class="space-y-4">
+                        <span class="badge-optimisation text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Offre Complète</span>
+                        <h3 class="text-xl font-bold text-white">Pack Intégral Autonomie</h3>
+                        <p class="text-stone-300 text-xs leading-relaxed">
+                            Accède immédiatement aux **deux guides complets** (Temporaire + Permanente) pour maîtriser tout ton parcours d'expatrié de A à Z.
+                        </p>
+                        <div class="space-y-1 pt-2">
+                            <div class="text-stone-400 text-xs line-through">Valeur séparée : 94 €</div>
+                            <div class="text-3xl font-bold text-amber-500">77 € <span class="text-xs text-stone-400 font-normal">pack complet</span></div>
+                        </div>
+                        <hr class="border-white/10">
+                        <ul class="space-y-2 text-xs text-stone-300">
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Guide Résidence Temporaire & Cédula (V1)</li>
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Guide Résidence Permanente</li>
+                            <li class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Accès illimité à toutes les futures mises à jour</li>
+                            <li class="flex items-center gap-2 text-amber-400 font-semibold"><span class="text-[#25D366] font-bold">⚡</span>Accès au Groupe Telegram Privé</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 space-y-2">
+                        <a href="https://buy.stripe.com/4gM3cu9kLbgkcCq2P08k803" target="_blank" class="block w-full text-center bg-amber-600 text-stone-950 font-bold py-3 rounded-xl hover:bg-amber-700 transition text-sm shadow-md">
+                            Obtenir le Pack Intégral (77 €)
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -439,7 +491,7 @@
                     icon.style.transform = 'rotate(0deg)';
                 } else {
                     document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = '0px');
-                    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)';
+                    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
                     content.style.maxHeight = content.scrollHeight + 'px';
                     icon.style.transform = 'rotate(45deg)';
                 }
